@@ -21,15 +21,20 @@ The REST API can be created through running "api_server.py".
 While running "api_server.py": 
 
 To get list of episodes, use "curl localhost:5000/episodes". 
+
 To retrieve episode metadata, use "curl localhost:5000/episodes/<episode_name>/metadata". 
+
 To download an episode, use "wget localhost:5000/episodes/<episode_name>/download". 
 
 ## Dashboard 
 To run the dashboard, run "api_server.py" and open "localhost:5000" in a browser. The dashboard should have the following contents: 
 
 Camera Preview: shows the images from different cameras 
+
 Joint States: shows the updated states (position, velocity, torque) of the arm joints. 
+
 Episode Count: shows the index of the episode of the current recording. 
+
 Recording Control: start or stop camera recording. 
 
 Note that, because this is a simulation project, the dashboard has no actual use of controlling the recording of cameras so far. All camera images and joint states currently on display in the dashboard are simulated results. 
