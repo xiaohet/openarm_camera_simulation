@@ -1,0 +1,3 @@
+/home/txh20/openarm/build/CMakeFiles/openarm_sim.dir
+/home/txh20/openarm/build/CMakeFiles/edit_cache.dir
+/home/txh20/openarm/build/CMakeFiles/rebuild_cache.dir

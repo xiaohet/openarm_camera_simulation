@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenArm Dashboard</title>
+</head>
+
+<body>
+
+    <h1>OpenArm Monitoring Dashboard</h1>
+    
+    <h2>Camera Preview</h2>
+
+    <table>
+    <tr>
+    <td>
+        <h3>Left Wrist</h3>
+        <img
+            id="left_cam"
+            width="320">
+    </td>
+
+    <td>
+        <h3>Right Wrist</h3>
+        <img
+            id="right_cam"
+            width="320">
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        <h3>Ceiling</h3>
+        <img
+            id="ceiling_cam"
+            width="320">
+    </td>
+
+    <td>
+        <h3>ZED</h3>
+        <img
+            id="zed_cam"
+            width="320">
+    </td>
+    </tr>
+    </table>
+
+    <h2>Joint States</h2>
+
+    <pre id="joint_states">
+    Waiting for data...
+    </pre>
+
+    <button onclick="updateJoints()">
+        Get Joint States
+    </button>
+
+    <h2>Episode Count</h2>
+
+    <div id="episode_count">
+        Loading...
+    </div>
+
+    <h2>Recording Control</h2>
+
+    <button onclick="startRecording()">
+        Start Recording
+    </button>
+
+    <button onclick="stopRecording()">
+        Stop Recording
+    </button>
+
+    <div id="record_status">
+        Stopped
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+
+</body>
+
+</html>
