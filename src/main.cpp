@@ -66,9 +66,29 @@ void joint_loop()
     }
 }
 
+std::string pad_num(int num, int target_digits){
+    std::string num_str = std::to_string(num);
+
+    // calculate number of digits
+    int i = 0;
+    do{
+        num = num / 10;
+        i++;
+    }while(num != 0);
+    
+    if(target_digits > i){
+        num_str.insert(0, target_digits - i, '0');
+    }
+    
+    return num_str;
+}
+
 int main()
 {
-    episode_count = 1;
+    int episode_count = 1;
+    std::string episode_number = pad_num(episode_count, 4);
+    std::cout << "episode digits: " << episode_number << std::endl;
+
     CameraSimulator left("left_wrist", 30);
     CameraSimulator right("right_wrist", 30);
     CameraSimulator ceiling("ceiling", 15);
@@ -88,8 +108,12 @@ int main()
 
     // for testing saving episode data
     std::this_thread::sleep_for(std::chrono::seconds(5));
-    recorder.saveMetadata("episode_0001");
-    recorder.saveH5("episode_0001");
+
+    std::string episode_name = "episode_";
+    episode_name.append(episode_number);
+    std::cout << "string_name: " << episode_name << std::endl;
+    recorder.saveMetadata(episode_name);
+    recorder.saveH5(episode_name);
 
     return 0;
 }
